@@ -127,7 +127,7 @@ function App() {
 
   return (
     <div className="App" style={styles.container}>
-      <h2 style={styles.header}>SVG Uploader</h2>
+      <h2 style={styles.header}>SVG to Code</h2>
 
       <div {...getRootProps()} style={styles.dropzone}>
         <input {...getInputProps()} />
