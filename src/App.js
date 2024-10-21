@@ -1,6 +1,8 @@
+import { hover } from '@testing-library/user-event/dist/hover';
 import React, { useState, useEffect, useRef } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'; // Import Prism highlighter
+import style from 'react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark';
 import { materialDark } from 'react-syntax-highlighter/dist/esm/styles/prism'; // Import style for syntax highlighting
 
 function App() {
@@ -214,13 +216,13 @@ const styles = {
     marginBottom: '20px',
   },
   dropzone: {
-    border: '2px dashed #007BFF',
+    border: '2px solid #ececec',
     borderRadius: '10px',
     width: '100%',
     padding: '20px',
     textAlign: 'center',
     cursor: 'pointer',
-    marginBottom: '20px',
+    marginBottom: '20px',   
   },
   uploadButton: {
     padding: '10px 20px',
