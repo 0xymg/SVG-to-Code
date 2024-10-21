@@ -1,70 +1,51 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# SVG to Code app
 
-## Available Scripts
+This is a React-based web application that allows users to upload SVG files, adjust their size and color, get the svg code directly, and download or copy the SVG code.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **SVG Upload**: Upload SVG files by dragging and dropping or using a file upload button.
+- **SVG Preview**: Display the uploaded SVG with options to adjust its width, height, and color dynamically.
+- **Live Code Preview**: View the SVG code with syntax highlighting using React Syntax Highlighter.
+- **Copy SVG Code**: Easily copy the SVG code to the clipboard with a single button click.
+- **Download SVG**: Download the modified SVG file directly as an `.svg` file.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Demo
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+You can try a live demo of the project [here](#).
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
 
-### `npm run build`
+1. Upload an SVG file by either dragging it into the designated area or using the **Upload SVG** button.
+2. Adjust the SVG's width, height, and color using the input fields.
+3. The SVG will update in real-time as you modify its properties.
+4. The **SVG Code** section will display the updated SVG code with syntax highlighting.
+5. Use the **Copy Code** button to copy the SVG code to your clipboard.
+6. Click **Download SVG** to save the modified SVG as a `.svg` file.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Future Work
+- Creating Browser Extension to see directly svg codes
+- Changing styling to tailwindcss
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technologies Used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **React**: JavaScript library for building user interfaces.
+- **React Dropzone**: Used for file upload and drag-and-drop functionality.
+- **React Syntax Highlighter**: For rendering syntax-highlighted SVG code.
+- **Prism Syntax Highlighting**: A lightweight, customizable code syntax highlighter.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Dependencies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **React**: ^18.0.0
+- **React Dropzone**: ^11.3.4
+- **React Syntax Highlighter**: ^15.4.3
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+You can view all project dependencies in the `package.json` file.
 
-## Learn More
+## License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.

@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useDropzone } from 'react-dropzone';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'; // Import Prism highlighter
+import { materialDark } from 'react-syntax-highlighter/dist/esm/styles/prism'; // Import style for syntax highlighting
 
 function App() {
   const [svgCode, setSvgCode] = useState(null);
@@ -30,6 +32,20 @@ function App() {
       navigator.clipboard.writeText(svgCode);
       alert("SVG code copied to clipboard!");
     }
+  };
+
+  const downloadSvgCode = () => {
+    const blob = new Blob([svgCode], { type: 'image/svg+xml' });
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'downloaded_image.svg';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    URL.revokeObjectURL(url); // Clean up the URL object
   };
 
   const { getRootProps, getInputProps } = useDropzone({
@@ -161,11 +177,19 @@ function App() {
             </div>
             <div style={styles.codeSection}>
               <h3>SVG Code</h3>
-              <pre style={styles.codeBox}>
+              <SyntaxHighlighter language="jsx"
+               lineProps={{style: {wordBreak: "break-all", whiteSpace: "pre-wrap"}}}
+               customStyle={{style: {maxHeight: "200px"}}}
+               wrapLines={true} 
+
+               style={materialDark}>
                 {svgCode}
-              </pre>
+              </SyntaxHighlighter>
               <button style={styles.copyButton} onClick={copyToClipboard}>
                 Copy Code
+              </button>
+              <button style={styles.downloadButton} onClick={downloadSvgCode}>
+                Download SVG
               </button>
             </div>
           </>
@@ -242,16 +266,6 @@ const styles = {
   codeSection: {
     textAlign: 'center',
   },
-  codeBox: {
-    backgroundColor: '#f4f4f4',
-    padding: '10px',
-    borderRadius: '5px',
-    whiteSpace: 'pre-wrap',
-    wordWrap: 'break-word',
-    maxHeight: '300px',
-    overflowY: 'auto',
-    textAlign: 'left',
-  },
   copyButton: {
     marginTop: '10px',
     padding: '10px 20px',
@@ -260,6 +274,16 @@ const styles = {
     border: 'none',
     borderRadius: '5px',
     cursor: 'pointer',
+  },
+  downloadButton: {
+    marginTop: '10px',
+    padding: '10px 20px',
+    backgroundColor: '#007BFF',
+    color: '#fff',
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer',
+    marginLeft: '10px',
   },
   placeholderText: {
     textAlign: 'center',
